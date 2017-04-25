@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<mandelaSpaceInvasion>
+	<heroProjectile>
+		<width>4</width>
+		<height>6</height>
+		<drawingScale>1</drawingScale>
+		<deltaY>5</deltaY>
+		<color>#F92672</color>
+	</heroProjectile>
+	<heroShip>
+		<width>100</width>
+		<height>80</height>
+		<drawingScale>0.5</drawingScale>
+		<deltaX>5</deltaX>
+		<shootCooldownUpdateTime>30</shootCooldownUpdateTime>
+	</heroShip>
+	<invaderProjectile>
+		<width>8</width>
+		<height>20</height>
+		<drawingScale>1</drawingScale>
+		<deltaY>5</deltaY>
+		<color>#AE81FF</color>
+	</invaderProjectile>
+	<invaderShip>
+		<width>110</width>
+		<height>80</height>
+		<drawingScale>0.20</drawingScale>
+		<movementCooldownUpdateTime>2</movementCooldownUpdateTime>
+		<color>#FF0000</color>
+		<constantSpeedUp>0.001</constantSpeedUp>
+	</invaderShip>
+	<game>
+		<level>hard</level>
+	</game>
+</mandelaSpaceInvasion>
