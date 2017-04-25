@@ -35,14 +35,16 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Game extends Canvas implements Runnable, GameTimer {
-    public static final int CANVAS_WIDTH = 500;
-    public static final int CANVAS_HEIGHT = 700;
-    public static final int INVADER_COLUMN_WIDTH = 50;
-    public static final int INVADER_ROW_HEIGHT = 50;
-    public static final int INVADER_WINDOW_MARGIN_TOP = 50;
-    public static final int INVADER_WINDOW_MARGIN_LEFT = 50;
-    public static final int INVADER_NEXT_LINE_HEIGHT = 50;
-    private static final int INITIAL_SHOOTING_DELAY = 250;
+    
+	// Variáveis de configuração do game
+	public static int CANVAS_WIDTH = 500;
+    public static int CANVAS_HEIGHT = 700;
+    public static int INVADER_COLUMN_WIDTH = 50;
+    public static int INVADER_ROW_HEIGHT = 50;
+    public static int INVADER_WINDOW_MARGIN_TOP = 50;
+    public static int INVADER_WINDOW_MARGIN_LEFT = 50;
+    public static int INVADER_NEXT_LINE_HEIGHT = 50;
+    private static int INITIAL_SHOOTING_DELAY = 250;
     private static String LEVEL;
 
     private JFrame frame;
@@ -101,11 +103,27 @@ public class Game extends Canvas implements Runnable, GameTimer {
 					Element eElement = (Element) node;
 					
 					// Atribui as configurações mapeadas no arquivo
+					CANVAS_WIDTH = Integer.parseInt(eElement.getElementsByTagName("canvasWidth").item(0).getTextContent());
+				    CANVAS_HEIGHT = Integer.parseInt(eElement.getElementsByTagName("canvasHeight").item(0).getTextContent());
+				    INVADER_COLUMN_WIDTH = Integer.parseInt(eElement.getElementsByTagName("invaderColumnWidth").item(0).getTextContent());
+				    INVADER_ROW_HEIGHT = Integer.parseInt(eElement.getElementsByTagName("invaderRowHeight").item(0).getTextContent());
+				    INVADER_WINDOW_MARGIN_TOP = Integer.parseInt(eElement.getElementsByTagName("invaderWindowMarginTop").item(0).getTextContent());
+				    INVADER_WINDOW_MARGIN_LEFT = Integer.parseInt(eElement.getElementsByTagName("invaderWindowMarginLeft").item(0).getTextContent());
+				    INVADER_NEXT_LINE_HEIGHT = Integer.parseInt(eElement.getElementsByTagName("invaderNextLineHeight").item(0).getTextContent());
+				    INITIAL_SHOOTING_DELAY = Integer.parseInt(eElement.getElementsByTagName("initialShootingDelay").item(0).getTextContent());
 					LEVEL = eElement.getElementsByTagName("level").item(0).getTextContent();
 					
 					// TODO: REMOVER
 					System.out.println("Game");
 					System.out.println("---------------------------------");
+					System.out.println("canvasWidth : " + eElement.getElementsByTagName("canvasWidth").item(0).getTextContent());
+					System.out.println("canvasHeight : " + eElement.getElementsByTagName("canvasHeight").item(0).getTextContent());
+					System.out.println("invaderColumnWidth : " + eElement.getElementsByTagName("invaderColumnWidth").item(0).getTextContent());
+					System.out.println("invaderRowHeight : " + eElement.getElementsByTagName("invaderRowHeight").item(0).getTextContent());
+					System.out.println("invaderWindowMarginTop : " + eElement.getElementsByTagName("invaderWindowMarginTop").item(0).getTextContent());
+					System.out.println("invaderWindowMarginLeft : " + eElement.getElementsByTagName("invaderWindowMarginLeft").item(0).getTextContent());
+					System.out.println("invaderNextLineHeight : " + eElement.getElementsByTagName("invaderNextLineHeight").item(0).getTextContent());
+					System.out.println("initialShootingDelay : " + eElement.getElementsByTagName("initialShootingDelay").item(0).getTextContent());
 					System.out.println("level : " + eElement.getElementsByTagName("level").item(0).getTextContent());
 					System.out.println("");
 				}
@@ -121,7 +139,7 @@ public class Game extends Canvas implements Runnable, GameTimer {
     	setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
 
     	// Efetua configurações do frame para execução do jogo
-        frame = new JFrame("Mandela Space Invaders :: Loading");
+        frame = new JFrame("Mandela Space Invasion :: Loading");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
         frame.pack();
@@ -207,7 +225,7 @@ public class Game extends Canvas implements Runnable, GameTimer {
                 Render();
             }
             
-            frame.setTitle("Mandela Space Invaders");
+            frame.setTitle("Mandela Space Invasion");
         }
     }
     private void ProcessInput(){

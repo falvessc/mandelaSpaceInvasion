@@ -24,6 +24,6 @@ public class StatusRibbon implements GraphicalShape{
         graphics.setFont(new Font("Consolas", Font.PLAIN, 12));
         graphics.setColor(COLOR_YELLOW);
         graphics.setColor(COLOR_GREEN);
-        graphics.drawString("Mandela Space Invaders", WIDTH/2 - 85, 20);
+        graphics.drawString("Mandela Space Invasion", WIDTH/2 - 85, 20);
     }
 }

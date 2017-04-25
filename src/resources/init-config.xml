@@ -30,6 +30,14 @@
 		<constantSpeedUp>0.001</constantSpeedUp>
 	</invaderShip>
 	<game>
-		<level>hard</level>
+		<canvasWidth>500</canvasWidth>
+		<canvasHeight>700</canvasHeight>
+		<invaderColumnWidth>50</invaderColumnWidth>
+		<invaderRowHeight>50</invaderRowHeight>
+		<invaderWindowMarginTop>50</invaderWindowMarginTop>
+		<invaderWindowMarginLeft>50</invaderWindowMarginLeft>
+		<invaderNextLineHeight>50</invaderNextLineHeight>
+		<initialShootingDelay>250</initialShootingDelay>
+		<level>easy</level>
 	</game>
 </mandelaSpaceInvasion>
